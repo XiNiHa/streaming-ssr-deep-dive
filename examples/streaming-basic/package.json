@@ -1,0 +1,28 @@
+{
+  "name": "streaming-basic",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "unocss:dev": "unocss \"./**/*.tsx\" --watch -o styles/uno.css",
+    "unocss:build": "unocss \"./**/*.tsx\" -o styles/uno.css",
+    "dev": "next dev",
+    "build": "yarn unocss:build && next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@types/node": "18.11.9",
+    "@types/react": "18.0.25",
+    "@types/react-dom": "18.0.8",
+    "next": "13.0.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "typescript": "4.8.4"
+  },
+  "devDependencies": {
+    "@iconify-json/mdi": "^1.1.34",
+    "@unocss/cli": "^0.46.3",
+    "@unocss/reset": "^0.46.3",
+    "unocss": "^0.46.3"
+  }
+}

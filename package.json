@@ -1,6 +1,9 @@
 {
   "name": "streaming-ssr-deep-dive",
   "private": true,
+  "workspaces": [
+    "examples/*"
+  ],
   "scripts": {
     "build": "slidev build",
     "dev": "slidev --open",
@@ -11,5 +14,10 @@
     "@slidev/theme-default": "*",
     "@slidev/theme-seriph": "*"
   },
-  "packageManager": "yarn@3.2.4"
+  "packageManager": "yarn@3.2.4",
+  "devDependencies": {
+    "@iconify-json/bi": "^1.1.10",
+    "@iconify-json/logos": "^1.1.18",
+    "@iconify-json/mdi": "^1.1.34"
+  }
 }
