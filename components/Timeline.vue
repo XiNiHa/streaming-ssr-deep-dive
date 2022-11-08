@@ -5,6 +5,14 @@ defineProps<{
     boxClass?: string
     textClass?: string
     percentage: number
+  }[] | {
+    subframes: {
+      text: string
+      boxClass?: string
+      textClass?: string
+    }[],
+    boxClass?: string
+    percentage: number
   }[];
   events: {
     text: string
@@ -16,19 +24,25 @@ defineProps<{
 </script>
 
 <template>
-  <div class="mb-12">
-    <div class="w-full h-32 flex items-stretch">
-      <div v-for="timeframe in timeframes" :key="timeframe.text"
-        :class="'relative flex items-center justify-center whitespace-pre-wrap text-center ' + timeframe.boxClass"
+  <div class="relative mb-12">
+    <div class="w-full min-h-32 flex items-stretch">
+      <div v-for="timeframe, i in timeframes" :key="i"
+        class="relative flex items-center justify-center whitespace-pre-wrap text-center" :class="timeframe.boxClass"
         :style="{ width: timeframe.percentage && `${timeframe.percentage}%` }">
-        <span :class="timeframe.textClass">{{ timeframe.text }}</span>
+        <div v-if="'subframes' in timeframe" class="flex flex-col w-full h-full">
+          <div v-for="subframe in timeframe.subframes" class="flex-1 flex items-center justify-center"
+            :class="subframe.boxClass">
+            <span :class="subframe.textClass">{{ subframe.text }}</span>
+          </div>
+        </div>
+        <span v-else :class="timeframe.textClass">{{ timeframe.text }}</span>
       </div>
     </div>
-    <div class="w-full flex">
-      <div v-for="event in events" :class="'relative whitespace-pre-wrap text-center ' + event.boxClass"
+    <div class="absolute -z-1 top-[calc(100%+48px)] w-full flex">
+      <div v-for="event in events" class="relative whitespace-pre-wrap text-center" :class="event.boxClass"
         :style="{ left: event.left }">
-        <div class="z-10 absolute top-0 left-0">
-          <div class="w-[3px] h-4 bg-gray-600" />
+        <div class="z-10 absolute bottom-0 left-0">
+          <div class="w-[3px] h-16 bg-gray-600" />
           <div class="whitespace-pre relative mt-1">
             <span :class="'relative ' + event.textClass">{{ event.text }}</span>
           </div>

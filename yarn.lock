@@ -1657,6 +1657,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"acorn@npm:^6.2.1":
+  version: 6.4.2
+  resolution: "acorn@npm:6.4.2"
+  bin:
+    acorn: bin/acorn
+  checksum: 44b07053729db7f44d28343eed32247ed56dc4a6ec6dff2b743141ecd6b861406bbc1c20bf9d4f143ea7dd08add5dc8c290582756539bc03a8db605050ce2fb4
+  languageName: node
+  linkType: hard
+
 "acorn@npm:^8.8.0":
   version: 8.8.1
   resolution: "acorn@npm:8.8.1"
@@ -4531,6 +4540,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"neo-async@npm:^2.6.1":
+  version: 2.6.2
+  resolution: "neo-async@npm:2.6.2"
+  checksum: deac9f8d00eda7b2e5cd1b2549e26e10a0faa70adaa6fdadca701cc55f49ee9018e427f424bac0c790b7c7e2d3068db97f3093f1093975f2acb8f8818b936ed9
+  languageName: node
+  linkType: hard
+
 "next@npm:13.0.2":
   version: 13.0.2
   resolution: "next@npm:13.0.2"
@@ -4991,24 +5007,39 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:18.2.0":
-  version: 18.2.0
-  resolution: "react-dom@npm:18.2.0"
+"react-dom@npm:experimental":
+  version: 0.0.0-experimental-4bd245e9e-20221104
+  resolution: "react-dom@npm:0.0.0-experimental-4bd245e9e-20221104"
   dependencies:
     loose-envify: ^1.1.0
-    scheduler: ^0.23.0
+    scheduler: 0.0.0-experimental-4bd245e9e-20221104
   peerDependencies:
-    react: ^18.2.0
-  checksum: 7d323310bea3a91be2965f9468d552f201b1c27891e45ddc2d6b8f717680c95a75ae0bc1e3f5cf41472446a2589a75aed4483aee8169287909fcd59ad149e8cc
+    react: 0.0.0-experimental-4bd245e9e-20221104
+  checksum: 37ee4b9445302a3e9c47ea0fa970f496a7b73257e7459235b7d842c8207a9f09eaa0aed8367de4ae9bf51713a8279fee682bcafa3a8fc42bc03b345d26725cda
   languageName: node
   linkType: hard
 
-"react@npm:18.2.0":
-  version: 18.2.0
-  resolution: "react@npm:18.2.0"
+"react-server-dom-webpack@npm:experimental":
+  version: 0.0.0-experimental-4bd245e9e-20221104
+  resolution: "react-server-dom-webpack@npm:0.0.0-experimental-4bd245e9e-20221104"
+  dependencies:
+    acorn: ^6.2.1
+    loose-envify: ^1.1.0
+    neo-async: ^2.6.1
+  peerDependencies:
+    react: 0.0.0-experimental-4bd245e9e-20221104
+    react-dom: 0.0.0-experimental-4bd245e9e-20221104
+    webpack: ^5.59.0
+  checksum: ed94b63da639e61aa66b497fe1946af6fa663285b2366feb9a01eb47009741a0e8605ca84a46275ad4105ce131f90f8e57eb5d3a1e429fbfda71a4bf8fda04bd
+  languageName: node
+  linkType: hard
+
+"react@npm:experimental":
+  version: 0.0.0-experimental-4bd245e9e-20221104
+  resolution: "react@npm:0.0.0-experimental-4bd245e9e-20221104"
   dependencies:
     loose-envify: ^1.1.0
-  checksum: 88e38092da8839b830cda6feef2e8505dec8ace60579e46aa5490fc3dc9bba0bd50336507dc166f43e3afc1c42939c09fe33b25fae889d6f402721dcd78fca1b
+  checksum: c27c479d0b5c1d4ece9809a84de3716a231d843d4b9470b88b225d47d70974e29a0104e870ecb1392d1f5aa119361a49480f935a30068488cc3d5fc47d4624ea
   languageName: node
   linkType: hard
 
@@ -5186,12 +5217,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"scheduler@npm:^0.23.0":
-  version: 0.23.0
-  resolution: "scheduler@npm:0.23.0"
+"scheduler@npm:0.0.0-experimental-4bd245e9e-20221104":
+  version: 0.0.0-experimental-4bd245e9e-20221104
+  resolution: "scheduler@npm:0.0.0-experimental-4bd245e9e-20221104"
   dependencies:
     loose-envify: ^1.1.0
-  checksum: d79192eeaa12abef860c195ea45d37cbf2bbf5f66e3c4dcd16f54a7da53b17788a70d109ee3d3dde1a0fd50e6a8fc171f4300356c5aee4fc0171de526bf35f8a
+  checksum: 06fbf5b726214857004ced96da5de9a56fe3c515b0e2d658705f2a4f2dde4c611cb61237cb7eed7720d40e2faa73e4cafc503bcca536ba236dab84e44ed7b0df
   languageName: node
   linkType: hard
 
@@ -5388,8 +5419,9 @@ __metadata:
     "@unocss/cli": ^0.46.3
     "@unocss/reset": ^0.46.3
     next: 13.0.2
-    react: 18.2.0
-    react-dom: 18.2.0
+    react: experimental
+    react-dom: experimental
+    react-server-dom-webpack: experimental
     typescript: 4.8.4
     unocss: ^0.46.3
   languageName: unknown

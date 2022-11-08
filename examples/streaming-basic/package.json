@@ -15,8 +15,9 @@
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.8",
     "next": "13.0.2",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "experimental",
+    "react-dom": "experimental",
+    "react-server-dom-webpack": "experimental",
     "typescript": "4.8.4"
   },
   "devDependencies": {
