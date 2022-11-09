@@ -38,13 +38,14 @@ defineProps<{
         <span v-else :class="timeframe.textClass">{{ timeframe.text }}</span>
       </div>
     </div>
-    <div class="absolute -z-1 top-[calc(100%+48px)] w-full flex">
+    <div class="absolute -z-1 top-[calc(100%+16px)] w-full flex">
       <div v-for="event in events" class="relative whitespace-pre-wrap text-center" :class="event.boxClass"
         :style="{ left: event.left }">
         <div class="z-10 absolute bottom-0 left-0">
-          <div class="w-[3px] h-16 bg-gray-600" />
-          <div class="whitespace-pre relative mt-1">
-            <span :class="'relative ' + event.textClass">{{ event.text }}</span>
+          <div class="w-[3px] h-16 bg-gray-600">
+            <div class="absolute top-[calc(100%+4px)] whitespace-pre">
+              <span class="relative" :class="event.textClass">{{ event.text }}</span>
+            </div>
           </div>
         </div>
       </div>

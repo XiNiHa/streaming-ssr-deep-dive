@@ -76,3 +76,6 @@
     @apply text-6xl font-500 leading-20;
   }
 }
+.slidev-layout.full {
+  padding: 0;
+}
